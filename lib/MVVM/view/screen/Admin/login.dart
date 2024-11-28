@@ -1,12 +1,9 @@
 import 'package:event_app/MVVM/utils/constant/colors.dart';
-import 'package:event_app/MVVM/utils/constant/sizes.dart';
+import 'package:event_app/MVVM/utils/widgets/custombottemnavigationbar.dart';
 import 'package:event_app/MVVM/utils/widgets/custombutton.dart';
 import 'package:event_app/MVVM/utils/widgets/customform_field.dart';
-import 'package:event_app/MVVM/view/screen/Admin/home.dart';
 import 'package:event_app/main.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 
 class Login1 extends StatefulWidget {
   const Login1({super.key});
@@ -19,7 +16,7 @@ class _Login1State extends State<Login1> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController=TextEditingController();
   String username="admin";
-  String password="1234";
+  String password="1111";
   final formkey = GlobalKey<FormState>();
 
   @override
@@ -31,12 +28,15 @@ class _Login1State extends State<Login1> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Login",
-                style: TextStyle(fontSize: 24, 
-                fontWeight: FontWeight.bold,color: primarycolor.c),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: Text(
+                  "Login",
+                  style: TextStyle(fontSize: 24, 
+                  fontWeight: FontWeight.bold,color: primarycolor.c),
+                ),
               ),
-              sw60,
+              SizedBox(height: 50,),
               SizedBox(width: mq.width *0.8,
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 20),
@@ -44,15 +44,15 @@ class _Login1State extends State<Login1> {
                     controller: usernameController,
                     hinttext: "Enter Username",
                     heplertext: "Your unique username",
-                    hintstyle: TextStyle(color: fontcolor.c),
+                    hintstyle: const TextStyle(color: fontcolor.c),
                               
-                    prefixicon: const Icon(Icons.person_rounded,color: icon1Color.c,),
+                    prefixicon: const Icon(Icons.person_rounded,color: grey.c,),
                   
                     validator:(value) {
                       if(usernameController.text.isEmpty){
-                      return"Enter your password";}
+                      return"Enter your Username";}
                       else if(usernameController.text!=username){
-                        return"invalid password";
+                        return"invalid Username";
                       }
                       return null;
                     },
@@ -67,8 +67,8 @@ class _Login1State extends State<Login1> {
                     controller: passwordController,
                     hinttext: "Enter Password",
                    heplertext: "Your unique Password",
-                    hintstyle: TextStyle(color:fontcolor.c ,),
-                    prefixicon: Icon(Icons.lock_rounded,color: icon1Color.c,),
+                    hintstyle: const TextStyle(color:fontcolor.c ,),
+                    prefixicon: const Icon(Icons.lock_rounded,color: grey.c,),
                      validator:(value) {
                       if(passwordController.text.isEmpty){
                       return"Enter your password";}
@@ -90,7 +90,8 @@ class _Login1State extends State<Login1> {
                         content: Text("Login Successfull!"),
                         backgroundColor: Colors.green,)
                         );
-                        Navigator.push(context,MaterialPageRoute(builder: (v)=>Home1()));
+                        Navigator.push(context,MaterialPageRoute(builder: (v)=>const CustomBottomNavigationBar(name1:'Student' ,
+                        name2:"oOrganizer" ,name3: 'Event',)));
                     }
                 }, text: "Login"),
               ),

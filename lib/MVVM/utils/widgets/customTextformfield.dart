@@ -1,46 +1,40 @@
-import 'package:event_app/MVVM/utils/constant/colors.dart';
 import 'package:flutter/material.dart';
 
-class CustomFormField extends StatelessWidget {
-  final String hinttext;
+class CustomtexFormField extends StatelessWidget {
+  final String ?hinttext;
   final TextStyle hintstyle;
-  final String heplertext;
+  final String ?heplertext;
   final Widget? prefixicon;
   final Widget? suffixicon;
   final Widget? icon;
-  TextEditingController? controller;
-  final Function()? suffix;
+  final Color color;
+ Function ()onpress;
 
-  final String?Function(String?)validator;
-
-  CustomFormField(
+  CustomtexFormField(
    
    {super.key, 
     this.prefixicon, 
   this.suffixicon,
-  required this.hinttext,
-  required this.heplertext,
+   this.hinttext,
+  this.heplertext,
   required this.hintstyle,
   this.icon,
-  this.suffix,
-  required this.validator,
-  required this.controller,
+  required this.onpress,
+  required this.color, 
   });
 
     
   @override
   Widget build(BuildContext context) {
     return(SizedBox(
-      width: double.infinity,
+      width: 370,
       child: TextFormField(
-        controller: controller,
-        validator: validator,
         decoration: InputDecoration(
-          fillColor: secondarycolor.c,
+          fillColor: color,
         filled: true,
         hintText: hinttext,
         hintStyle: hintstyle,
-        prefixIcon: prefixicon,
+        prefixIcon: null,
         suffixIcon:null,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),

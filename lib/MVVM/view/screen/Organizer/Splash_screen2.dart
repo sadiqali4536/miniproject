@@ -1,17 +1,18 @@
 import 'package:event_app/MVVM/utils/constant/colors.dart';
-import 'package:event_app/MVVM/view/screen/Admin/login.dart';
+import 'package:event_app/MVVM/view/screen/Organizer/login2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class Splashscreen1 extends StatefulWidget {
-  const Splashscreen1({super.key});
+class SplashScreen2 extends StatefulWidget {
+  const SplashScreen2({super.key});
 
   @override
-  State<Splashscreen1> createState() => _Splashscreen1State();
+  State<SplashScreen2> createState() => _SplashScreen2State();
 }
 
-class _Splashscreen1State extends State<Splashscreen1> {
-   @override
+class _SplashScreen2State extends State<SplashScreen2> {
+  @override
     void initState(){
 
       initTo();
@@ -19,7 +20,7 @@ class _Splashscreen1State extends State<Splashscreen1> {
     }
     void initTo()async{
        await Future.delayed(const Duration(seconds: 2),() {
-  Get.off(const Login1(),transition: Transition.zoom);
+  Get.off(const login2(),transition: Transition.zoom);
 
         });
 

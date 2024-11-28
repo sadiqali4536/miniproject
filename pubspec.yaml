@@ -27,15 +27,24 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+
 dependencies:
   flutter:
     sdk: flutter
+  floating_navbar: ^2.0.2
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   get: ^4.6.6
+  flutter_svg: ^2.0.14
+  floating_bottom_navigation_bar: ^1.5.2
+  flutter_custom_cards: ^0.2.1
+  flutter_iconpicker: ^4.0.1
+  buttons_flutter: ^0.0.2+1
+  toggle_switch: ^2.3.0
 
 dev_dependencies:
   flutter_test:
